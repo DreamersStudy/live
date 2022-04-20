@@ -1,0 +1,111 @@
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background-color: #1a1b26;
+    display: grid;
+    place-content: center;
+}
+/* ======================== */
+
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-weight: 300;
+}
+.title-content{
+    display: block; /*Makes each line of text inside of the span 100% width so it will fall on the next line.*/
+    opacity: 0;
+    animation: revealText .5s forwards; /*Adding the animation over .5 seconds. Forwards means the last state will be the styles applied at 100% (to).*/
+}
+/*Adding individual animation delays so that the text animates in at different stages.*/
+.title-second{
+    animation-delay: .175s;
+}
+.title-third{
+    animation-delay: .25s;
+}
+.title-fourth{
+    animation-delay: .325s;
+}
+/*From and to is just another way of saying start at 0 and end at 100%.*/
+@keyframes revealText {
+    from{
+        transform: translateY(20px); /*Moves the element down by 20px.*/
+    }
+    to{
+        opacity: 1; /*Turn the opacity back on so that we can see the element in it's final animation state.*/
+        transform: none; /*Removes the 20px so that the text will be at the normal starting position at the end of the animation.*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #212534;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+/* ======================== */
+/* Everything here is pretty straight forward so I don't think I have to explain.*/
+.button{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 50px;
+    border: 3px solid 
+    #3c67e3;
+    border-radius: 10px;
+}
+
+.button:hover{
+    animation: pulsate 1s 
+    ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+    /* 
+        Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+        The values are as follow: offset-x | offset-y | blur-radius | color
+    */
+    0%{
+        box-shadow: 
+        0 0 25px #5ddcff,
+        0 0 50px #4e00c2;
+    }
+}
